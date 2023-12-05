@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace SportTicketingAPI.Data
 {
-    public class SportTicketingContext : DbContext
+    public class SportTicketingContext : IdentityDbContext<User>
     {
         public SportTicketingContext(DbContextOptions<SportTicketingContext> options) : base(options) { }
 

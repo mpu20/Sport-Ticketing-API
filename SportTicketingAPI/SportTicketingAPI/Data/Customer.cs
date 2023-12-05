@@ -10,7 +10,7 @@ namespace SportTicketingAPI.Data
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerId { get; set; }
         [Required]
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = null!;
         [Required]
         public string LastName { get; set; }
         [Required]
