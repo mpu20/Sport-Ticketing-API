@@ -9,19 +9,18 @@ namespace SportTicketingAPI.Data
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MatchId { get; set; }
-        public DateTime? Date { get; set; }
-
-        [ForeignKey("Venue")]
+        public DateTime? Date { get; set; }        
         public int? VenueId { get; set; }
-        [ForeignKey("HomeTeam")]
         public int? HomeTeamId { get; set; }
-        [ForeignKey("AwayTeam")]
         public int? AwayTeamId { get; set; }
         public string? description { get; set; }
         public int? Capacity { get; set; }
+        [ForeignKey("VenueId")]
         public virtual Venue Venue { get; set; }
+        [ForeignKey("HomeTeamId")]
         [InverseProperty("HomeMatches")]
         public virtual Team HomeTeam { get; set; }
+        [ForeignKey("AwayTeamId")]
         [InverseProperty("AwayMatches")]
         public virtual Team AwayTeam { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }

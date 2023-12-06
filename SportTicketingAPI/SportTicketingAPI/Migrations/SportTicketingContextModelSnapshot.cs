@@ -203,11 +203,9 @@ namespace SportTicketingAPI.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("HomeTeamId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("VenueId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("description")
@@ -254,7 +252,6 @@ namespace SportTicketingAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SportId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("TeamId");
@@ -273,11 +270,9 @@ namespace SportTicketingAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TicketId"));
 
                     b.Property<int?>("CustomerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("MatchId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<decimal?>("Price")
@@ -310,11 +305,9 @@ namespace SportTicketingAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"));
 
                     b.Property<int?>("CustomerId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("MatchId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Timestamp")

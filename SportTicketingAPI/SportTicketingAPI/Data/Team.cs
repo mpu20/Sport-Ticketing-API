@@ -11,9 +11,9 @@ namespace SportTicketingAPI.Data
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TeamId { get; set; }
         [Required]
-        public string Name { get; set; }
-        [ForeignKey("Sport")]
+        public string Name { get; set; }        
         public int? SportId { get; set; }
+        [ForeignKey("SportId")]
         public virtual Sport Sport { get; set; }
         [InverseProperty("HomeTeam")]
         public virtual ICollection<Match> HomeMatches { get; set; }
