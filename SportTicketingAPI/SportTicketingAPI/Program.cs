@@ -26,6 +26,7 @@ builder.Services.AddDbContext<SportTicketingContext>(options =>
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 
 builder.Services.AddAuthentication(options => { 
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
