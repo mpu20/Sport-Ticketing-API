@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SportTicketingAPI.Models;
 using SportTicketingAPI.Repositories;
 
@@ -41,9 +40,9 @@ namespace SportTicketingAPI.Controllers
         {
             if (ModelState.IsValid)
             {
-                await teamRepository.CreateTeam(teamModel);
+                teamModel.TeamId = await teamRepository.CreateTeam(teamModel);
 
-                return CreatedAtAction("Details", new { id = teamModel.TeamId }, teamModel);
+                return CreatedAtAction(nameof(GetTeamById), new { id = teamModel.TeamId }, teamModel);
             }
 
             return BadRequest();
