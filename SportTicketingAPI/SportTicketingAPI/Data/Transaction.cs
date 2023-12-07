@@ -9,14 +9,14 @@ namespace SportTicketingAPI.Data
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TransactionId { get; set; }
-        [ForeignKey("Customer")]
         public int? CustomerId { get; set; }
-        [ForeignKey("Match")]
         public int? MatchId { get; set; }
         public DateTime? Timestamp { get; set; }
         [Column(TypeName = "decimal(10,2)")]
         public decimal? TotalAmount { get; set; }
+        [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
+        [ForeignKey("MatchId")]
         public virtual Match Match { get; set; }
     }
 }

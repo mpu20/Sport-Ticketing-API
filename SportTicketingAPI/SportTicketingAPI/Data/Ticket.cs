@@ -9,9 +9,7 @@ namespace SportTicketingAPI.Data
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TicketId { get; set; }
-        [ForeignKey("Match")]
         public int? MatchId { get; set; }
-        [ForeignKey("Customer")]
         public int? CustomerId { get; set; }
         [Column(TypeName = "decimal(10,2)")]
         public decimal? Price { get; set; }
@@ -20,7 +18,9 @@ namespace SportTicketingAPI.Data
         [Required]
         [MaxLength(20)]
         public string Status { get; set; }
+        [ForeignKey("MatchId")]
         public virtual Match Match { get; set; }
+        [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
     }
 }
